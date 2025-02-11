@@ -31,12 +31,23 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+
     defaultConfig {
         minSdkVersion 16
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         versionCode 21
         versionName "3.0.10"
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8 // Set Java compatibility to 1.8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8' // Set Kotlin JVM target to 1.8
+    }
+
     lintOptions {
         disable 'InvalidPackage'
     }
