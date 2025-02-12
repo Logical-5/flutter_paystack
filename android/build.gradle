@@ -27,7 +27,20 @@ apply plugin: 'kotlin-android'
 android {
     namespace "co.paystack.flutterpaystack" // Add this line
     compileSdkVersion 32
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        // Configure JVM toolchain
+        java {
+            toolchain {
+                languageVersion.set(JavaLanguageVersion.of(17))
+            }
+        }
+    }
 
+    kotlinOptions {
+        jvmTarget = '17'
+    }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
